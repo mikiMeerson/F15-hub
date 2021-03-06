@@ -1,83 +1,19 @@
-body {
-  font-size: 24px;
-  white-space: nowrap;
-  overflow: hidden;
+html, body {
+  overflow: auto;
+  height: 100%;
 }
 
-.container {
-  height: 100%;
-  width: 100%;
+body {
+  font-size: 24px;
+  color: #050540;
+  background-color: #deddee;
+}
+
+.content {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-}
-
-button {
-  background-color: "lightblue";
-  padding: 12;
-  margin: 16;
-  justify-content: "center";
-  align-items: "center";
-  border-radius: 4;
-  border-color: red;
-}
-
-.modalContent {
-  background-color: #050540;
-  padding: 22;
-  justify-content: "center";
-  align-items: "center";
-  border-radius: 4;
-  border-color: blue;
-}
-
-.bottomModal {
-  justify-content: "flex-end";
-  margin: 0;
-}
-
-.scrollableModal {
-  height: 300
-}
-
-.scrollableModalContent1 {
-  height: 200;
-  background-color: "orange";
-  align-items: "center";
-  justify-content: "center";
-}
-
-.scrollableModalContent2 {
-  height: 200;
-  background-color: "lightgreen";
-  align-items: "center";
-  justify-content: "center";
-}
-
-.wrapper {
-  flex: 1;
-  margin-top: 150;
-}
-
-submitButton {
-  padding-left: 5;
-  padding-right: 5;
-  margin-top: 20;
-}
-
-.container {
-  flex: 1;
-  background-color: "white";
-  align-items: "center";
-  justify-content: "center";
-}
-
-input {
-  height: 40;
-  border-color: "gray";
-  border-width: 1;
-  margin: 10;
-  border-radius: 5;
-  padding: 5;
+  margin-left: 150px;
+  margin-top: 50px;
 }

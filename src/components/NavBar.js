@@ -1,10 +1,11 @@
 import React, {useState} from "react";
-import {BrowserRouter as Router, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import { faHammer } from "@fortawesome/free-solid-svg-icons";
 import { faTools } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import './NavBar.css';
 import OfekLogo from '../assets/images/OfekLogo.png';
 
@@ -19,30 +20,30 @@ const NavBar = () => {
     };
 
   return (
-    <Router>
-        <div id="sidebar" className="sidebar" role="navigation"
-            onMouseOver={() => toggleSideBar()} onMouseOut={() => toggleSideBar()}>
-            <Link to="/">
+      <div>
+        <nav id="sidebar" className="sidebar" role="navigation"
+             onMouseOver={() => toggleSideBar()} onMouseOut={() => toggleSideBar()}>
+            <Link to={'/'} > 
                 <img  src={OfekLogo} alt="ofek unit logo" className="logo-icon" />
                 <span className="logo-text">F15-HUB</span>
             </Link>
-            <Link to="/about">
+
+            <Link to={'/about'}>
                 <FontAwesomeIcon icon={faQuestionCircle} className="side-bar-icon"/>
-                <span className="icon-text">About us</span>
+                <span className="icon-text">About</span>
             </Link>
-            <Link to="/pybuild">
+            <Link to={'/pybuild'} >
                 <FontAwesomeIcon icon={faHammer} className="side-bar-icon"/>
                 <span className="icon-text">PyBuild</span>
             </Link>
-
             <nav>
                 <div className="dropdown-menu">
-                    <div className="dropdown-menu-item" id="demo1">
-                    <a>
-                     <FontAwesomeIcon icon={faTools} className="side-bar-icon" />
-                     <span className="icon-text">Tools</span>
-                     <FontAwesomeIcon icon={faCaretDown} style={{marginLeft: "10px"}}/> 
-                     </a>
+                    <div className="dropdown-menu-item">
+                    <div className="dropdown-container">
+                    <FontAwesomeIcon icon={faTools} className="side-bar-icon" />
+                    <span className="icon-text">Tools</span>
+                    <FontAwesomeIcon icon={faCaretDown} style={{marginLeft: "10px"}}/> 
+                    </div>
                         <div className="dropdown-menu">
                             <div className="dropdown-menu-item">
                                 <Link to="/cmd-word"><span  className="tool-item">CMD Word</span></Link>
@@ -54,9 +55,10 @@ const NavBar = () => {
                     </div>
                 </div>
             </nav>
-        </div>
-    </Router>
+        </nav>
+      </div>
   );
 }
+
 
 export default NavBar;

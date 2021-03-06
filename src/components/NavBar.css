@@ -15,7 +15,7 @@
     white-space: nowrap;
   }
   
-  .sidebar a {
+  .sidebar a, .dropdown-container {
     text-decoration: none;
     width: 100%;
     font-size: 25px;
