@@ -9,13 +9,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './NavBar.css';
 import OfekLogo from '../assets/images/OfekLogo.png';
 
-const NavBar = () => {
+const NavBar = props => {
     
-    const [mini, setMini] = useState(true);
 
     const toggleSideBar = () => {
-        setMini(!mini);
-        if(mini) document.getElementById("sidebar").style.width = "250px";
+        props.MinMaxMain();
+        if(props.mini) document.getElementById("sidebar").style.width = "250px";
         else document.getElementById("sidebar").style.width = "85px";
     };
 
