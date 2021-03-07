@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   faCaretDown,
@@ -7,22 +6,36 @@ import {
   faTools,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import tools from '../assets/tools.json';
 
 import './NavBar.css';
 import OfekLogo from '../assets/images/OfekLogo.png';
 
-interface PropsType {
-  toggleMainWidth(): void;
+interface NavBarPropsType {
+  toggleMainWidth:() => void;
   mini: Boolean;
 }
-const NavBar = (props: PropsType) => {
+const NavBar = ({ toggleMainWidth, mini }: NavBarPropsType) => {
   const SideBarElement: HTMLElement | null = document.getElementById('sidebar');
+
+  const pages =  [
+    {
+        link: "/about",
+        icon: faQuestionCircle,
+        display: "About"
+    },
+    {
+        link: "/pybuild",
+        icon: faHammer,
+        display: "PyBuild"
+    }
+  ];
 
   const toggleSideBar = (mouse: Boolean) => {
     if(mouse) {
-      props.toggleMainWidth();
+      toggleMainWidth();
       if (SideBarElement) {
-        if (props.mini) SideBarElement.style.width = '250px';
+        if (mini) SideBarElement.style.width = '250px';
         else SideBarElement.style.width = '85px';
       }
     }
@@ -43,15 +56,14 @@ const NavBar = (props: PropsType) => {
           <img src={OfekLogo} alt="ofek unit logo" className="logo-icon" />
           <span className="logo-text">F15-HUB</span>
         </Link>
-
-        <Link to="/about">
-          <FontAwesomeIcon icon={faQuestionCircle} className="side-bar-icon" />
-          <span className="icon-text">About</span>
-        </Link>
-        <Link to="/pybuild">
-          <FontAwesomeIcon icon={faHammer} className="side-bar-icon" />
-          <span className="icon-text">PyBuild</span>
-        </Link>
+        <div>
+          {pages.map((page) => (
+            <Link to={page.link} key={page.display} >
+              <FontAwesomeIcon icon={page.icon} className="side-bar-icon" />
+              <span className="icon-text">{page.display}</span>
+            </Link>
+          ))}
+        </div>
         <nav>
           <div className="dropdown-menu">
             <div className="dropdown-menu-item">
@@ -62,21 +74,14 @@ const NavBar = (props: PropsType) => {
               </div>
               <div className="dropdown-menu">
                 <div className="dropdown-menu-item">
-                  <Link to="/cmd-word">
-                    <span className="tool-item">CMD Word</span>
-                  </Link>
-                  <Link to="/dte-file-creator">
-                    <span className="tool-item">DTE File Creator</span>
-                  </Link>
-                  <Link to="/miss-shob">
-                    <span className="tool-item">Miss Shob</span>
-                  </Link>
-                  <Link to="/memmap">
-                    <span className="tool-item">MemMap</span>
-                  </Link>
+                  {tools.map(tool => (
+                    <Link to={tool.link} key={tool.display}>
+                      <span className="tool-item">{tool.display}</span>
+                    </Link>
+                  ))}
                 </div>
               </div>
-            </div>
+            </div> 
           </div>
         </nav>
       </nav>
