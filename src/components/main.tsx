@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-import NavBar from './NavBar';
+import NavBar from './NavBar/NavBar';
 import Home from './Home';
 import About from './About';
 import PyBuild from './Tools/pybuild';
