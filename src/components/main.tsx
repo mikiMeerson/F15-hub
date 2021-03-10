@@ -10,22 +10,18 @@ import MemMap from './Tools/memmap';
 import MissShob from './Tools/miss-shob';
 
 const Main = () => {
-  const MainElement: HTMLElement | null = document.getElementById('main');
-
   const [minimizeSideBar, setMinimizeSideBar] = useState(true);
+  const [mainId, setMainId] = useState("main-max");
+
   const toggleMainWidth = () => {
     setMinimizeSideBar(!minimizeSideBar);
-
-    if (MainElement) {
-      if (minimizeSideBar) MainElement.style.marginLeft = '250px';
-      else MainElement.style.marginLeft = '85px';
-    }
+    setMainId(minimizeSideBar ? "main-min" : "main-max");
   };
 
   return (
     <Router>
       <NavBar toggleMainWidth={toggleMainWidth} mini={minimizeSideBar} />
-      <div className="content" id="main">
+      <div className="content" id={mainId}>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />

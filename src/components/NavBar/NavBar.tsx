@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { faCaretDown, faTools } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,22 +13,20 @@ interface NavBarPropsType {
   mini: Boolean;
 }
 const NavBar = ({ toggleMainWidth, mini }: NavBarPropsType) => {
-  const SideBarElement: HTMLElement | null = document.getElementById('sidebar');
+  const [sideBarId, setSideBarId] = useState("sidebar-min");
 
   const toggleSideBar = (mouse: Boolean) => {
     if (mouse) {
       toggleMainWidth();
-      if (SideBarElement) {
-        if (mini) SideBarElement.style.width = '250px';
-        else SideBarElement.style.width = '85px';
-      }
+      if (mini) setSideBarId("sidebar-max");
+      else setSideBarId("sidebar-min");
     }
   };
 
   return (
     <div>
       <nav
-        id="sidebar"
+        id={sideBarId}
         className="sidebar"
         role="navigation"
         onMouseOver={() => toggleSideBar(true)}

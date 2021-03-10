@@ -20,3 +20,11 @@ body {
   transition: 0.4s;
   padding: 16px;
 }
+
+#main-min {
+  margin-left: 250px;
+}
+
+#main-max {
+  margin-left: 85px;
+}
