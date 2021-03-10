@@ -13,13 +13,13 @@ interface NavBarPropsType {
   mini: Boolean;
 }
 const NavBar = ({ toggleMainWidth, mini }: NavBarPropsType) => {
-  const [sideBarId, setSideBarId] = useState("sidebar-min");
+  const [sideBarId, setSideBarId] = useState('sidebar-min');
 
   const toggleSideBar = (mouse: Boolean) => {
     if (mouse) {
       toggleMainWidth();
-      if (mini) setSideBarId("sidebar-max");
-      else setSideBarId("sidebar-min");
+      if (mini) setSideBarId('sidebar-max');
+      else setSideBarId('sidebar-min');
     }
   };
 
