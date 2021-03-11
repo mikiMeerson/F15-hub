@@ -13,21 +13,20 @@ interface NavBarPropsType {
   mini: Boolean;
 }
 const NavBar = ({ toggleMainWidth, mini }: NavBarPropsType) => {
-  const [sideBarId, setSideBarId] = useState('sidebar-min');
+  const [sideBarWidthClass, setSideBarWidthClass] = useState('sidebar-min');
 
-  const toggleSideBar = (mouse: Boolean) => {
-    if (mouse) {
+  const toggleSideBar = (isMouseEvent: Boolean) => {
+    if (isMouseEvent) {
       toggleMainWidth();
-      if (mini) setSideBarId('sidebar-max');
-      else setSideBarId('sidebar-min');
+      setSideBarWidthClass(mini ? 'sidebar-max' : 'sidebar-min');
+
     }
   };
 
   return (
     <div>
       <nav
-        id={sideBarId}
-        className="sidebar"
+        className={ ["sidebar", sideBarWidthClass].join(' ') }
         role="navigation"
         onMouseOver={() => toggleSideBar(true)}
         onFocus={() => toggleSideBar(false)}

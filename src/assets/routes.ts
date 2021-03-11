@@ -7,33 +7,33 @@ import MemMap from '../components/Tools/memmap';
 import MissShob from '../components/Tools/miss-shob';
 
 const routes = [
-    {
-        link: '/home',
-        comp: Home
-    },
-    {
+  {
+    link: '/',
+    comp: Home,
+  },
+  {
     link: '/about',
-    comp: About
+    comp: About,
   },
   {
     link: '/pybuild',
-    comp: PyBuild
+    comp: PyBuild,
   },
   {
     link: '/cmd-word',
-    comp: CMDWord
+    comp: CMDWord,
   },
   {
     link: '/memmap',
-    comp: MemMap
+    comp: MemMap,
   },
   {
     link: '/dte-file-creator',
-    comp: DTEFileCreator
+    comp: DTEFileCreator,
   },
   {
     link: '/miss-shob',
-    comp: MissShob
+    comp: MissShob,
   },
 ];
 

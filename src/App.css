@@ -21,10 +21,10 @@ body {
   padding: 16px;
 }
 
-#main-min {
+.main-min {
   margin-left: 250px;
 }
 
-#main-max {
+.main-max {
   margin-left: 85px;
 }
