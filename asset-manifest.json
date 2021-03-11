@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/F15-hub/static/css/main.b587ad05.chunk.css",
-    "main.js": "/F15-hub/static/js/main.64d7439d.chunk.js",
-    "main.js.map": "/F15-hub/static/js/main.64d7439d.chunk.js.map",
+    "main.css": "/F15-hub/static/css/main.1560b135.chunk.css",
+    "main.js": "/F15-hub/static/js/main.1b51ba7f.chunk.js",
+    "main.js.map": "/F15-hub/static/js/main.1b51ba7f.chunk.js.map",
     "runtime-main.js": "/F15-hub/static/js/runtime-main.a709c6d3.js",
     "runtime-main.js.map": "/F15-hub/static/js/runtime-main.a709c6d3.js.map",
     "static/js/2.66da674e.chunk.js": "/F15-hub/static/js/2.66da674e.chunk.js",
     "static/js/2.66da674e.chunk.js.map": "/F15-hub/static/js/2.66da674e.chunk.js.map",
     "index.html": "/F15-hub/index.html",
-    "static/css/main.b587ad05.chunk.css.map": "/F15-hub/static/css/main.b587ad05.chunk.css.map",
+    "static/css/main.1560b135.chunk.css.map": "/F15-hub/static/css/main.1560b135.chunk.css.map",
     "static/js/2.66da674e.chunk.js.LICENSE.txt": "/F15-hub/static/js/2.66da674e.chunk.js.LICENSE.txt",
     "static/media/OfekLogo.31f399c7.png": "/F15-hub/static/media/OfekLogo.31f399c7.png"
   },
   "entrypoints": [
     "static/js/runtime-main.a709c6d3.js",
     "static/js/2.66da674e.chunk.js",
-    "static/css/main.b587ad05.chunk.css",
-    "static/js/main.64d7439d.chunk.js"
+    "static/css/main.1560b135.chunk.css",
+    "static/js/main.1b51ba7f.chunk.js"
   ]
 }
