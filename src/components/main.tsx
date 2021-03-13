@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import NavBar from './NavBar/NavBar';
+import Home from './Home';
 import { routes } from '../assets/routes';
 
 const Main = () => {
@@ -15,12 +16,15 @@ const Main = () => {
   return (
     <Router>
       <NavBar toggleMainWidth={toggleMainWidth} mini={minimizeSideBar} />
-      <div className={ ["content",mainWidthClass].join(' ') } >
+      <div className={`content ${mainWidthClass}`} >
         <Switch>
+          <Route exact path='/' component={Home} />
           {routes.map((route) => (
-            <Route key={route.link}
-                   exact path={route.link} 
-                   component={route.comp} />
+            <Route
+              key={route.path?.toString()}
+              path={route.path}
+              component={route.component}
+            />
           ))}
         </Switch>
       </div>

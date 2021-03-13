@@ -19,14 +19,13 @@ const NavBar = ({ toggleMainWidth, mini }: NavBarPropsType) => {
     if (isMouseEvent) {
       toggleMainWidth();
       setSideBarWidthClass(mini ? 'sidebar-max' : 'sidebar-min');
-
     }
   };
 
   return (
     <div>
       <nav
-        className={ ["sidebar", sideBarWidthClass].join(' ') }
+        className={`sidebar ${sideBarWidthClass}`}
         role="navigation"
         onMouseOver={() => toggleSideBar(true)}
         onFocus={() => toggleSideBar(false)}

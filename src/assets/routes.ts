@@ -1,4 +1,4 @@
-import Home from '../components/Home';
+import { RouteProps } from 'react-router';
 import About from '../components/About';
 import PyBuild from '../components/Tools/pybuild';
 import CMDWord from '../components/Tools/cmd-word';
@@ -6,34 +6,30 @@ import DTEFileCreator from '../components/Tools/dte-file-creator';
 import MemMap from '../components/Tools/memmap';
 import MissShob from '../components/Tools/miss-shob';
 
-const routes = [
+const routes : RouteProps[] = [
   {
-    link: '/',
-    comp: Home,
+    path: '/about',
+    component: About,
   },
   {
-    link: '/about',
-    comp: About,
+    path: '/pybuild',
+    component: PyBuild,
   },
   {
-    link: '/pybuild',
-    comp: PyBuild,
+    path: '/cmd-word',
+    component: CMDWord,
   },
   {
-    link: '/cmd-word',
-    comp: CMDWord,
+    path: '/memmap',
+    component: MemMap,
   },
   {
-    link: '/memmap',
-    comp: MemMap,
+    path: '/dte-file-creator',
+    component: DTEFileCreator,
   },
   {
-    link: '/dte-file-creator',
-    comp: DTEFileCreator,
-  },
-  {
-    link: '/miss-shob',
-    comp: MissShob,
+    path: '/miss-shob',
+    component: MissShob,
   },
 ];
 
