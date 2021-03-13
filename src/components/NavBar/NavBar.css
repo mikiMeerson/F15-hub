@@ -27,7 +27,7 @@ body {
 }
 
 .sidebar-low {
-  margin-top: 100px;
+  margin-top: 110px;
 }
 
 .navbar-items {
@@ -99,7 +99,6 @@ body * {
 
 nav .dropdown-menu-item {
   position: relative;
-  display: block;
   opacity: 0;
   cursor: pointer;
 }
@@ -118,7 +117,6 @@ nav > .dropdown-menu > .dropdown-menu-item {
 }
 .dropdown-menu.dropdown-menu-item a {
   white-space: nowrap;
-  display: block;
 }
 
 .dropdown-menu-item:hover > .dropdown-menu {
@@ -131,7 +129,6 @@ menu:hover > .dropdown-menu-item {
 
 nav a {
   color: #fff;
-  min-width: 190px;
   transition: color 0.5s, transform 0.5s;
   padding-bottom: 20px;
   position: relative;
@@ -166,8 +163,12 @@ nav
   font-size: 18px;
 }
 
-.platform-item {
-  padding-top: 5px;
+.platform-item{
+  margin: 5px 20px 10px 40px;
+  padding: 5px;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 15px;
   background-color: #fff;
-  color: #191a1d;
+  color: #02021d;
 }

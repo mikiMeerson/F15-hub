@@ -5,7 +5,7 @@ import './NavBar.css';
 
 const NavBarPlatforms = () => (
   <div className="dropdown-menu">
-    <div className="dropdown-menu-item platforms-menu" >
+    <div className="dropdown-menu-item" >
       {platforms.map((platform) => (
         <Link to={platform.link} key={platform.display} className="platform-item">
           <span>{platform.display}</span>

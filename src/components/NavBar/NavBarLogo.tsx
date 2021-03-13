@@ -20,7 +20,7 @@ const NavBarLogo = ({ toggleSideBarHeight }: NavBarLogoPropsType) => (
           <Link to="/">
             <img src={OfekLogo} alt="ofek unit logo" className="logo-icon" />
             <span className="logo-text">F15-HUB</span>
-            <FontAwesomeIcon icon={faCaretDown} id="dropdown-icon" />
+            <FontAwesomeIcon icon={faCaretDown} />
           </Link>
         </div>
         <NavBarPlatforms />

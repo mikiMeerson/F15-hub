@@ -21,7 +21,7 @@ const platforms = [
   {
     link: '/f16-hub',
     display: 'F16-HUB',
-  },
+  }
 ];
 
 const tools = [
