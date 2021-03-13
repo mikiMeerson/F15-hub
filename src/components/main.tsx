@@ -16,9 +16,9 @@ const Main = () => {
   return (
     <Router>
       <NavBar toggleMainWidth={toggleMainWidth} mini={minimizeSideBar} />
-      <div className={`content ${mainWidthClass}`} >
+      <div className={`content ${mainWidthClass}`}>
         <Switch>
-          <Route exact path='/' component={Home} />
+          <Route exact path="/" component={Home} />
           {routes.map((route) => (
             <Route
               key={route.path?.toString()}

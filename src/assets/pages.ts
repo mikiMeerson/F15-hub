@@ -13,6 +13,17 @@ const pages = [
   },
 ];
 
+const platforms = [
+  {
+    link: '/f15-hub',
+    display: 'F15-HUB',
+  },
+  {
+    link: '/f16-hub',
+    display: 'F16-HUB',
+  },
+];
+
 const tools = [
   {
     link: '/cmd-word',
@@ -32,4 +43,4 @@ const tools = [
   },
 ];
 
-export { tools, pages };
+export { tools, pages, platforms };

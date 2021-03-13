@@ -14,8 +14,17 @@ interface NavBarPropsType {
 }
 const NavBar = ({ toggleMainWidth, mini }: NavBarPropsType) => {
   const [sideBarWidthClass, setSideBarWidthClass] = useState('sidebar-min');
+  const [lowerSideBar, setLowerSideBar] = useState(false);
+  const [sideBarHeightClass, setSideBarHeightClass] = useState('sidebar-high');
 
-  const toggleSideBar = (isMouseEvent: Boolean) => {
+  const toggleSideBarHeight = (isMouseEvent: Boolean) => {
+    if(isMouseEvent) {
+    setLowerSideBar(!lowerSideBar);
+    setSideBarHeightClass(lowerSideBar ? 'sidebar-high' : 'sidebar-low');
+    }
+  };
+
+  const toggleSideBarWidth = (isMouseEvent: Boolean) => {
     if (isMouseEvent) {
       toggleMainWidth();
       setSideBarWidthClass(mini ? 'sidebar-max' : 'sidebar-min');
@@ -27,13 +36,13 @@ const NavBar = ({ toggleMainWidth, mini }: NavBarPropsType) => {
       <nav
         className={`sidebar ${sideBarWidthClass}`}
         role="navigation"
-        onMouseOver={() => toggleSideBar(true)}
-        onFocus={() => toggleSideBar(false)}
-        onMouseOut={() => toggleSideBar(true)}
-        onBlur={() => toggleSideBar(false)}
+        onMouseOver={() => toggleSideBarWidth(true)}
+        onFocus={() => toggleSideBarWidth(false)}
+        onMouseOut={() => toggleSideBarWidth(true)}
+        onBlur={() => toggleSideBarWidth(false)}
       >
-        <NavBarLogo />
-        <div>
+        <NavBarLogo toggleSideBarHeight={toggleSideBarHeight} />
+        <div className={`navbar-items ${sideBarHeightClass}` }>
           {pages.map((page) => (
             <Link to={page.link} key={page.display}>
               <FontAwesomeIcon icon={page.icon} className="side-bar-icon" />

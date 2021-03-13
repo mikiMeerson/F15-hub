@@ -6,7 +6,7 @@ import DTEFileCreator from '../components/Tools/dte-file-creator';
 import MemMap from '../components/Tools/memmap';
 import MissShob from '../components/Tools/miss-shob';
 
-const routes : RouteProps[] = [
+const routes: RouteProps[] = [
   {
     path: '/about',
     component: About,
