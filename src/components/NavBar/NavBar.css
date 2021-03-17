@@ -7,7 +7,7 @@ body {
 }
 
 .sidebar-max {
-  width: 270px;
+  width: 250px;
 }
 
 .sidebar {
@@ -15,23 +15,19 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #02021d;
   overflow: hidden;
   transition: 0.5s;
   padding-top: 20px;
   white-space: nowrap;
 }
 
-.sidebar-high {
-  margin-top: 10px;
-}
-
-.sidebar-low {
-  margin-top: 110px;
+.f16-style {
+  background-color: #2e051f;
 }
 
 .navbar-items {
   transition: 0.5s;
+  padding-right: 50%;
 }
 
 .sidebar a,
@@ -158,12 +154,13 @@ nav
   opacity: 1;
 }
 
-.tool-item, .platform-item {
+.tool-item,
+.platform-item {
   padding-left: 50%;
   font-size: 18px;
 }
 
-.platform-item{
+.platform-item {
   margin: 5px 20px 10px 40px;
   padding: 5px;
   vertical-align: middle;

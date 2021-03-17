@@ -1,29 +1,19 @@
 import { Link } from 'react-router-dom';
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import OfekLogo from '../../assets/images/OfekLogo.png';
-import NavBarPlatforms from './NavBarPlatforms';
 
-interface NavBarLogoPropsType {
-  toggleSideBarHeight: (isMouseEvent: Boolean) => void;
+interface LogoPropsType {
+  header: string;
 }
-
-const NavBarLogo = ({ toggleSideBarHeight }: NavBarLogoPropsType) => (
-  <nav    
-      onMouseOver={() => toggleSideBarHeight(true)}
-      onFocus={() => toggleSideBarHeight(false)}
-      onMouseOut={() => toggleSideBarHeight(true)}
-      onBlur={() => toggleSideBarHeight(false)}>
+const NavBarLogo = ({ header }: LogoPropsType) => (
+  <nav>
     <div className="dropdown-menu">
       <div className="dropdown-menu-item">
         <div className="dropdown-container">
           <Link to="/">
             <img src={OfekLogo} alt="ofek unit logo" className="logo-icon" />
-            <span className="logo-text">F15-HUB</span>
-            <FontAwesomeIcon icon={faCaretDown} />
+            <span className="logo-text">{header}</span>
           </Link>
         </div>
-        <NavBarPlatforms />
       </div>
     </div>
   </nav>

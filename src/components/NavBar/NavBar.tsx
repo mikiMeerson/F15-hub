@@ -8,21 +8,19 @@ import './NavBar.css';
 import NavBarTools from './NavBarTools';
 import NavBarLogo from './NavBarLogo';
 
+interface PlatformType {
+  id: string;
+  header: string;
+  style: string;
+}
 interface NavBarPropsType {
   toggleMainWidth: () => void;
   mini: Boolean;
+  platform: PlatformType;
 }
-const NavBar = ({ toggleMainWidth, mini }: NavBarPropsType) => {
-  const [sideBarWidthClass, setSideBarWidthClass] = useState('sidebar-min');
-  const [lowerSideBar, setLowerSideBar] = useState(false);
-  const [sideBarHeightClass, setSideBarHeightClass] = useState('sidebar-high');
 
-  const toggleSideBarHeight = (isMouseEvent: Boolean) => {
-    if(isMouseEvent) {
-    setLowerSideBar(!lowerSideBar);
-    setSideBarHeightClass(lowerSideBar ? 'sidebar-high' : 'sidebar-low');
-    }
-  };
+const NavBar = ({ toggleMainWidth, mini, platform }: NavBarPropsType) => {
+  const [sideBarWidthClass, setSideBarWidthClass] = useState('sidebar-min');
 
   const toggleSideBarWidth = (isMouseEvent: Boolean) => {
     if (isMouseEvent) {
@@ -34,21 +32,23 @@ const NavBar = ({ toggleMainWidth, mini }: NavBarPropsType) => {
   return (
     <div>
       <nav
-        className={`sidebar ${sideBarWidthClass}`}
+        className={`sidebar ${platform.style} ${sideBarWidthClass}`}
         role="navigation"
         onMouseOver={() => toggleSideBarWidth(true)}
         onFocus={() => toggleSideBarWidth(false)}
         onMouseOut={() => toggleSideBarWidth(true)}
         onBlur={() => toggleSideBarWidth(false)}
       >
-        <NavBarLogo toggleSideBarHeight={toggleSideBarHeight} />
-        <div className={`navbar-items ${sideBarHeightClass}` }>
-          {pages.map((page) => (
-            <Link to={page.link} key={page.display}>
-              <FontAwesomeIcon icon={page.icon} className="side-bar-icon" />
-              <span className="icon-text">{page.display}</span>
-            </Link>
-          ))}
+        <NavBarLogo header={platform.header} />
+        <div className="navbar-items">
+          {pages
+            .filter((page) => page.tags.includes(platform.id))
+            .map((page) => (
+              <Link to={page.link} key={page.display}>
+                <FontAwesomeIcon icon={page.icon} className="side-bar-icon" />
+                <span className="icon-text">{page.display}</span>
+              </Link>
+            ))}
         </div>
         <nav>
           <div className="dropdown-menu">
@@ -58,7 +58,7 @@ const NavBar = ({ toggleMainWidth, mini }: NavBarPropsType) => {
                 <span className="icon-text">Tools</span>
                 <FontAwesomeIcon icon={faCaretDown} id="dropdown-icon" />
               </div>
-              <NavBarTools />
+              <NavBarTools platform={platform.id} />
             </div>
           </div>
         </nav>
