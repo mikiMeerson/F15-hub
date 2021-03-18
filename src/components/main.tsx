@@ -20,9 +20,7 @@ const Main = () => {
 
   const switchPlatform = (platformID: string) => {
     const newPlatform = platforms.find((p) => p.id === platformID);
-    if (newPlatform) {
-      setPlatform(newPlatform);
-    }
+    newPlatform && setPlatform(newPlatform);
   };
 
   return (

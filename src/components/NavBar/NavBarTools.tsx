@@ -1,5 +1,5 @@
+import { Link } from 'react-router-dom';
 import { tools } from '../../assets/pages';
-import NavBarToolItem from './NavBarToolItem';
 
 interface ToolsProps {
   platform: string;
@@ -9,13 +9,11 @@ const NavBarTools = ({ platform }: ToolsProps) => (
   <div className="dropdown-menu">
     <div className="dropdown-menu-item">
       {tools
-        .filter((tool) => tool.tags.includes(platform))
+        .filter((tool) => platform === 'home' || tool.tags.includes(platform))
         .map((tool) => (
-          <NavBarToolItem
-            key={tool.link}
-            link={tool.link}
-            display={tool.display}
-          />
+          <Link to={tool.link} key={tool.display}>
+            <span className="tool-item">{tool.display}</span>
+          </Link>
         ))}
     </div>
   </div>

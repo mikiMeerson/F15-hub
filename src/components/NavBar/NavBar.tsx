@@ -42,7 +42,10 @@ const NavBar = ({ toggleMainWidth, mini, platform }: NavBarPropsType) => {
         <NavBarLogo header={platform.header} />
         <div className="navbar-items">
           {pages
-            .filter((page) => page.tags.includes(platform.id))
+            .filter(
+              (page) =>
+                platform.id === 'home' || page.tags.includes(platform.id)
+            )
             .map((page) => (
               <Link to={page.link} key={page.display}>
                 <FontAwesomeIcon icon={page.icon} className="side-bar-icon" />

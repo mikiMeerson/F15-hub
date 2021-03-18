@@ -1,10 +1,6 @@
-import './CircleMenu.css';
-import {
-  faSpaceShuttle,
-  faRocket,
-  faHome,
-} from '@fortawesome/free-solid-svg-icons';
+import './platforms.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { platforms } from '../../assets/platforms';
 
 interface PlatformsProps {
   switchPlatform: (newPlatform: string) => void;
@@ -18,30 +14,20 @@ const PlatformsMenu = ({ switchPlatform }: PlatformsProps) => (
       <span className="lines line-2" />
       <span className="lines line-3" />
     </label>
-
-    <div className="menu-item home-style">
-      <FontAwesomeIcon icon={faHome} />
-    </div>
-    <div
-      className="menu-item f15-style"
-      role="button"
-      tabIndex={0}
-      title="f15"
-      onClick={() => switchPlatform('F15')}
-      onKeyDown={() => switchPlatform('F15')}
-    >
-      <FontAwesomeIcon icon={faSpaceShuttle} />
-    </div>
-    <div
-      className="menu-item f16-style"
-      role="button"
-      tabIndex={0}
-      title="f16"
-      onClick={() => switchPlatform('F16')}
-      onKeyDown={() => switchPlatform('F16')}
-    >
-      <FontAwesomeIcon icon={faRocket} />
-    </div>
+    {platforms.map((p) => (
+      <div
+        key={p.id}
+        className={`menu-item ${p.style}`}
+        role="button"
+        tabIndex={0}
+        title={p.id}
+        onClick={() => switchPlatform(p.id)}
+        onKeyDown={() => switchPlatform(p.id)}
+      >
+        <FontAwesomeIcon icon={p.icon} />
+      </div>
+    ))}
+    ;
   </nav>
 );
 
