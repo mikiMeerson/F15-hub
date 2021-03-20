@@ -1,0 +1,166 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.sidebar-min {
+  width: 85px;
+}
+
+.sidebar-max {
+  width: 250px;
+}
+
+.sidebar {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  padding-top: 20px;
+  white-space: nowrap;
+}
+
+.navbar-items {
+  transition: 0.5s;
+  padding-right: 50%;
+}
+
+.sidebar a,
+.dropdown-container {
+  text-decoration: none;
+  width: 100%;
+  font-size: 25px;
+  display: block;
+  color: #b5b5bc;
+}
+
+#dropdown-icon {
+  margin-left: 10px;
+}
+
+.sidebar a:hover {
+  color: white;
+}
+
+.side-bar-icon,
+.icon-text {
+  vertical-align: middle;
+}
+
+.side-bar-icon {
+  margin: 20px 8px 20px 32px;
+  margin-right: 35px;
+}
+
+.logo-icon {
+  width: 60px;
+  height: 60px;
+  margin-right: 8px;
+  padding-left: 16px;
+  vertical-align: middle;
+}
+
+.logo-text {
+  font-size: 32px;
+  color: #d4d3e6;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
+}
+
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+  background: #191a1d;
+  font-family: 'Karla', sans-serif;
+  width: 100vw;
+}
+body * {
+  margin: 0;
+  padding: 0;
+}
+
+nav .dropdown-menu-item {
+  position: relative;
+  opacity: 0;
+  cursor: pointer;
+}
+
+nav .dropdown-menu-item > .dropdown-menu {
+  position: absolute;
+  pointer-events: none;
+}
+nav > .dropdown-menu {
+  display: flex;
+}
+
+nav > .dropdown-menu > .dropdown-menu-item {
+  pointer-events: all;
+  opacity: 1;
+}
+.dropdown-menu.dropdown-menu-item a {
+  white-space: nowrap;
+}
+
+.dropdown-menu-item:hover > .dropdown-menu {
+  pointer-events: initial;
+}
+.dropdown-menu-item:hover > .dropdown-menu > .dropdown-menu-item,
+menu:hover > .dropdown-menu-item {
+  opacity: 1;
+}
+
+nav a {
+  color: #fff;
+  transition: color 0.5s, transform 0.5s;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+nav
+  > .dropdown-menu
+  > .dropdown-menu-item
+  > .dropdown-menu
+  > .dropdown-menu-item {
+  transition: transform 0.5s, opacity 0.5s;
+  transform: translateY(0%);
+  opacity: 0;
+}
+
+nav
+  > .dropdown-menu
+  > .dropdown-menu-item:hover
+  > .dropdown-menu
+  > .dropdown-menu-item,
+nav
+  > .dropdown-menu
+  > .dropdown-menu-item.hover
+  > .dropdown-menu
+  > .dropdown-menu-item {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+.tool-item,
+.platform-item {
+  padding-left: 50%;
+  font-size: 18px;
+}
+
+.platform-item {
+  margin: 5px 20px 10px 40px;
+  padding: 5px;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 15px;
+  background-color: #fff;
+  color: #02021d;
+}
