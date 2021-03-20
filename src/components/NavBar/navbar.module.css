@@ -1,0 +1,115 @@
+.sidebarMin {
+  width: 85px;
+}
+
+.sidebarMax {
+  width: 250px;
+}
+
+.sidebar {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  padding-top: 20px;
+  white-space: nowrap;
+}
+
+.navbarItems {
+  transition: 0.5s;
+  padding-right: 50%;
+}
+
+.sidebar a:hover {
+  color: white;
+}
+
+.sidebarIcon,
+.iconText {
+  vertical-align: middle;
+}
+
+.sidebarIcon {
+  margin: 20px 8px 20px 32px;
+  margin-right: 35px;
+}
+.sidebar a,
+.dropdownContainer {
+  text-decoration: none;
+  width: 100%;
+  font-size: 25px;
+  display: block;
+  color: #b5b5bc;
+}
+
+.dropdownIcon {
+  margin-left: 10px;
+}
+
+nav .dropdownMenuItem  {
+  position: relative;
+  opacity: 0;
+  cursor: pointer;
+}
+
+nav .dropdownMenuItem  > .dropdownMenu {
+  position: absolute;
+  pointer-events: none;
+}
+nav > .dropdownMenu {
+  display: flex;
+}
+
+nav > .dropdownMenu > .dropdownMenuItem  {
+  pointer-events: all;
+  opacity: 1;
+}
+.dropdownMenu.dropdownMenuItem  a {
+  white-space: nowrap;
+}
+
+.dropdownMenuItem:hover > .dropdownMenu {
+  pointer-events: initial;
+}
+.dropdownMenuItem:hover > .dropdownMenu > .dropdownMenuItem ,
+menu:hover > .dropdownMenuItem  {
+  opacity: 1;
+}
+
+nav a {
+  color: #fff;
+  transition: color 0.5s, transform 0.5s;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+nav
+  > .dropdownMenu
+  > .dropdownMenuItem 
+  > .dropdownMenu
+  > .dropdownMenuItem  {
+  transition: transform 0.5s, opacity 0.5s;
+  transform: translateY(0%);
+  opacity: 0;
+}
+
+nav
+  > .dropdownMenu
+  > .dropdownMenuItem:hover
+  > .dropdownMenu
+  > .dropdownMenuItem ,
+nav
+  > .dropdownMenu
+  > .dropdownMenuItem .hover
+  > .dropdownMenu
+  > .dropdownMenuItem  {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+.toolItem {
+  padding-left: 50%;
+  font-size: 18px;
+}

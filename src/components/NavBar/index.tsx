@@ -4,7 +4,7 @@ import { faCaretDown, faTools } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { pages } from '../../assets/pages';
 
-import './NavBar.css';
+import NavBarStyle from './navbar.module.css';
 import NavBarTools from './NavBarTools';
 import NavBarLogo from './NavBarLogo';
 
@@ -19,19 +19,21 @@ interface NavBarPropsType {
 }
 
 const NavBar = ({ toggleMainWidth, mini, platform }: NavBarPropsType) => {
-  const [sideBarWidthClass, setSideBarWidthClass] = useState('sidebar-min');
+  const [sideBarWidthClass, setSideBarWidthClass] =
+   useState(NavBarStyle.sidebarMin);
 
   const toggleSideBarWidth = (isMouseEvent: Boolean) => {
     if (isMouseEvent) {
       toggleMainWidth();
-      setSideBarWidthClass(mini ? 'sidebar-max' : 'sidebar-min');
+      setSideBarWidthClass(mini ? NavBarStyle.sidebarMax : 
+                                  NavBarStyle.sidebarMin);
     }
   };
 
   return (
     <div>
       <nav
-        className={`sidebar ${platform.style} ${sideBarWidthClass}`}
+        className={`${NavBarStyle.sidebar} ${platform.style} ${sideBarWidthClass}`}
         role="navigation"
         onMouseOver={() => toggleSideBarWidth(true)}
         onFocus={() => toggleSideBarWidth(false)}
@@ -39,7 +41,7 @@ const NavBar = ({ toggleMainWidth, mini, platform }: NavBarPropsType) => {
         onBlur={() => toggleSideBarWidth(false)}
       >
         <NavBarLogo header={platform.header} />
-        <div className="navbar-items">
+        <div className={NavBarStyle.navbarItems}>
           {pages
             .filter(
               (page) =>
@@ -47,18 +49,21 @@ const NavBar = ({ toggleMainWidth, mini, platform }: NavBarPropsType) => {
             )
             .map((page) => (
               <Link to={page.link} key={page.display}>
-                <FontAwesomeIcon icon={page.icon} className="side-bar-icon" />
-                <span className="icon-text">{page.display}</span>
+                <FontAwesomeIcon icon={page.icon}
+                                 className={NavBarStyle.sidebarIcon} />
+                <span className={NavBarStyle.iconText}>{page.display}</span>
               </Link>
             ))}
         </div>
         <nav>
-          <div className="dropdown-menu">
-            <div className="dropdown-menu-item">
-              <div className="dropdown-container">
-                <FontAwesomeIcon icon={faTools} className="side-bar-icon" />
-                <span className="icon-text">Tools</span>
-                <FontAwesomeIcon icon={faCaretDown} id="dropdown-icon" />
+          <div className={NavBarStyle.dropdownMenu}>
+            <div className={NavBarStyle.dropdownMenuItem}>
+              <div className={NavBarStyle.dropdownContainer}>
+                <FontAwesomeIcon icon={faTools}
+                                 className={NavBarStyle.sidebarIcon} />
+                <span className={NavBarStyle.iconText}>Tools</span>
+                <FontAwesomeIcon icon={faCaretDown} 
+                                 className={NavBarStyle.dropdownIcon} />
               </div>
               <NavBarTools platform={platform.id} />
             </div>
