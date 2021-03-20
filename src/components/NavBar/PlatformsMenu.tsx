@@ -1,4 +1,4 @@
-import './platforms.css';
+import './Platforms.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { platforms } from '../../assets/platforms';
 
@@ -14,17 +14,17 @@ const PlatformsMenu = ({ switchPlatform }: PlatformsProps) => (
       <span className="lines line-2" />
       <span className="lines line-3" />
     </label>
-    {platforms.map((p) => (
+    {platforms.map((platform) => (
       <div
-        key={p.id}
-        className={`menu-item ${p.style}`}
+        key={platform.id}
+        className={`menu-item ${platform.style}`}
         role="button"
         tabIndex={0}
-        title={p.id}
-        onClick={() => switchPlatform(p.id)}
-        onKeyDown={() => switchPlatform(p.id)}
+        title={platform.id}
+        onClick={() => switchPlatform(platform.id)}
+        onKeyDown={() => switchPlatform(platform.id)}
       >
-        <FontAwesomeIcon icon={p.icon} />
+        <FontAwesomeIcon icon={platform.icon} />
       </div>
     ))}
     ;

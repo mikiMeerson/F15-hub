@@ -1,10 +1,10 @@
 import { RouteProps } from 'react-router';
 import About from '../components/About';
-import PyBuild from '../components/Tools/pybuild';
-import CMDWord from '../components/Tools/cmd-word';
-import DTEFileCreator from '../components/Tools/dte-file-creator';
-import MemMap from '../components/Tools/memmap';
-import MissShob from '../components/Tools/miss-shob';
+import PyBuild from '../components/Tools/PyBuild';
+import CMDWord from '../components/Tools/CmdWord';
+import DTEFileCreator from '../components/Tools/DteFileCreator';
+import MemMap from '../components/Tools/Memmap';
+import MissShob from '../components/Tools/MissShob';
 
 const routes: RouteProps[] = [
   {

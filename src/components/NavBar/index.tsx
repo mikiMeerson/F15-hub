@@ -8,15 +8,14 @@ import './NavBar.css';
 import NavBarTools from './NavBarTools';
 import NavBarLogo from './NavBarLogo';
 
-interface PlatformType {
-  id: string;
-  header: string;
-  style: string;
-}
 interface NavBarPropsType {
   toggleMainWidth: () => void;
-  mini: Boolean;
-  platform: PlatformType;
+  mini: boolean;
+  platform: {
+    id: string;
+    header: string;
+    style: string;
+  };
 }
 
 const NavBar = ({ toggleMainWidth, mini, platform }: NavBarPropsType) => {

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-import NavBar from './NavBar/NavBar';
+import NavBar from './NavBar';
 import Home from './Home';
 import { routes } from '../assets/routes';
 import { platforms } from '../assets/platforms';
