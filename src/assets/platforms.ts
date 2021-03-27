@@ -3,7 +3,7 @@ import {
   faRocket,
   faSpaceShuttle,
 } from '@fortawesome/free-solid-svg-icons';
-import PlatformsStyle from '../components/NavBar/platforms.module.css';
+import PlatformsStyle from '../components/NavBar/Platforms.module.css';
 
 const platforms = [
   {

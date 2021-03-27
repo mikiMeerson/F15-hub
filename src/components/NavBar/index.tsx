@@ -4,7 +4,7 @@ import { faCaretDown, faTools } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { pages } from '../../assets/pages';
 
-import NavBarStyle from './navbar.module.css';
+import NavBarStyle from './NavBar.module.css';
 import NavBarTools from './NavBarTools';
 import NavBarLogo from './NavBarLogo';
 

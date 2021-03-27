@@ -5,7 +5,7 @@ import Home from './Home';
 import { routes } from '../assets/routes';
 import { platforms } from '../assets/platforms';
 import PlatformsMenu from './NavBar/PlatformsMenu';
-import MainStyle from './main.module.css';
+import MainStyle from './Main.module.css';
 
 
 const Main = () => {

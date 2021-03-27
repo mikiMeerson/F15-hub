@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { tools } from '../../assets/pages';
-import NavBarStyle from './navbar.module.css';
+import NavBarStyle from './NavBar.module.css';
 
 interface ToolsProps {
   platform: string;

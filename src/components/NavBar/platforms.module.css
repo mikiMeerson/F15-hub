@@ -4,8 +4,8 @@
   bottom: 0px;
   right: 0px;
   width: 50%;
-  margin-right: 50px;
-  margin-bottom: 85px;
+  margin-right: 70px;
+  margin-bottom: 70px;
   width: 70px;
   height: 70px;
   text-align: center;
@@ -17,25 +17,15 @@
 
 .menuItem,
 .menuOpenButton {
-  outline: none;
   background: #eeeeee;
-  border-radius: 100%;
-  width: 70px;
-  height: 70px;
   position: absolute;
   color: #ffffff;
-  text-align: center;
-  line-height: 70px;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   -webkit-transition: -webkit-transform ease-out 200ms;
   transition: -webkit-transform ease-out 200ms;
   transition: transform ease-out 200ms;
   transition: transform ease-out 200ms, -webkit-transform ease-out 200ms;
-}
-
-.menuOpenButton {
-  margin-left: -35px;
 }
 
 .lines {
@@ -88,11 +78,6 @@
     transition: all 0.1s ease 0s;
  } */
 
-.menuItem:hover {
-  background: #eeeeee;
-  cursor: pointer;
-}
-
 .menuItem:nth-child(3) {
   -webkit-transition-duration: 180ms;
   transition-duration: 180ms;
@@ -136,7 +121,6 @@
   transition-duration: 400ms;
   -webkit-transform: scale(1.1, 1.1) translate3d(0, 0, 0);
   transform: scale(1.1, 1.1) translate3d(0, 0, 0);
-  cursor: pointer;
   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
 }
 
@@ -210,33 +194,24 @@
 
 .home {
   background-color: #a30f2d;
-  box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
 }
 
 .home:hover {
   color: #a30f2d;
-  text-shadow: none;
 }
 
 .f15 {
   background-color: #02021d;
-  box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
 }
 
 .f15:hover {
   color: #02021d;
-  text-shadow: none;
 }
 
 .f16 {
   background-color: #5c0a3e;
-  box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
 }
 
 .f16:hover {
   color: #5c0a3e;
-  text-shadow: none;
 }
