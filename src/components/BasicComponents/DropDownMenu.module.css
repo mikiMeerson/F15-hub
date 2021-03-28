@@ -1,0 +1,74 @@
+.dropdownContainer {
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+  color: #b5b5bc;
+}
+
+nav .dropdownMenuItem {
+  position: relative;
+  opacity: 0;
+  cursor: pointer;
+}
+
+nav .dropdownMenuItem > .dropdownMenu {
+  position: absolute;
+  pointer-events: none;
+}
+nav > .dropdownMenu {
+  display: flex;
+  width: 100%;
+}
+
+nav > .dropdownMenu > .dropdownMenuItem {
+  pointer-events: all;
+  opacity: 1;
+}
+.dropdownMenu.dropdownMenuItem a {
+  white-space: nowrap;
+}
+
+.dropdownMenuItem:hover > .dropdownMenu {
+  pointer-events: initial;
+}
+.dropdownMenuItem:hover > .dropdownMenu > .dropdownMenuItem,
+menu:hover > .dropdownMenuItem {
+  opacity: 1;
+}
+
+nav > .dropdownMenu > .dropdownMenuItem > .dropdownMenu > .dropdownMenuItem {
+  transition: transform 0.5s, opacity 0.5s;
+  transform: translateY(0%);
+  opacity: 0;
+}
+
+nav
+  > .dropdownMenu
+  > .dropdownMenuItem:hover
+  > .dropdownMenu
+  > .dropdownMenuItem,
+nav
+  > .dropdownMenu
+  > .dropdownMenuItem
+  .hover
+  > .dropdownMenu
+  > .dropdownMenuItem {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+.dropdownIcon {
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.DropDownItem {
+  color: #b5b5bc;
+  font-size: 18px;
+  padding-left: 50%;
+}
+
+.DropDownItem:hover {
+  color: white;
+  transition: 0.5s;
+}

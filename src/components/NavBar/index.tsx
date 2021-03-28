@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { faCaretDown, faTools } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { pages } from '../../assets/pages';
 
 import NavBarStyle from './NavBar.module.css';
-import NavBarTools from './NavBarTools';
 import NavBarLogo from './NavBarLogo';
+import DropDownMenu from './DropDownMenu';
 
 interface NavBarPropsType {
   toggleMainWidth: () => void;
@@ -19,14 +18,16 @@ interface NavBarPropsType {
 }
 
 const NavBar = ({ toggleMainWidth, mini, platform }: NavBarPropsType) => {
-  const [sideBarWidthClass, setSideBarWidthClass] =
-   useState(NavBarStyle.sidebarMin);
+  const [sideBarWidthClass, setSideBarWidthClass] = useState(
+    NavBarStyle.sidebarMin
+  );
 
   const toggleSideBarWidth = (isMouseEvent: Boolean) => {
     if (isMouseEvent) {
       toggleMainWidth();
-      setSideBarWidthClass(mini ? NavBarStyle.sidebarMax : 
-                                  NavBarStyle.sidebarMin);
+      setSideBarWidthClass(
+        mini ? NavBarStyle.sidebarMax : NavBarStyle.sidebarMin
+      );
     }
   };
 
@@ -49,26 +50,15 @@ const NavBar = ({ toggleMainWidth, mini, platform }: NavBarPropsType) => {
             )
             .map((page) => (
               <Link to={page.link} key={page.display}>
-                <FontAwesomeIcon icon={page.icon}
-                                 className={NavBarStyle.sidebarIcon} />
+                <FontAwesomeIcon
+                  icon={page.icon}
+                  className={NavBarStyle.sidebarIcon}
+                />
                 <span className={NavBarStyle.iconText}>{page.display}</span>
               </Link>
             ))}
         </div>
-        <nav>
-          <div className={NavBarStyle.dropdownMenu}>
-            <div className={NavBarStyle.dropdownMenuItem}>
-              <div className={NavBarStyle.dropdownContainer}>
-                <FontAwesomeIcon icon={faTools}
-                                 className={NavBarStyle.sidebarIcon} />
-                <span className={NavBarStyle.iconText}>Tools</span>
-                <FontAwesomeIcon icon={faCaretDown} 
-                                 className={NavBarStyle.dropdownIcon} />
-              </div>
-              <NavBarTools platform={platform.id} />
-            </div>
-          </div>
-        </nav>
+        <DropDownMenu platform={platform} />
       </nav>
     </div>
   );

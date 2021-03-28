@@ -7,7 +7,6 @@ import { platforms } from '../assets/platforms';
 import PlatformsMenu from './NavBar/PlatformsMenu';
 import MainStyle from './Main.module.css';
 
-
 const Main = () => {
   const [minimizeSideBar, setMinimizeSideBar] = useState(true);
   const [mainWidthClass, setMainWidthClass] = useState('main-max');
