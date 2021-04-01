@@ -3,7 +3,7 @@ import About from '../components/About';
 import PyBuild from '../components/Tools/PyBuild';
 import CMDWord from '../components/Tools/CmdWord';
 import DTEFileCreator from '../components/Tools/DteFileCreator';
-import MemMap from '../components/Tools/Memmap';
+import MemMap from '../components/Tools/MemMap';
 import MissShob from '../components/Tools/MissShob';
 
 const routes: RouteProps[] = [
