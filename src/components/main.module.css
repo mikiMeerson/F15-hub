@@ -10,7 +10,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   margin-left: 85px;
-  margin-top: 50px;
+  right: 0;
   transition: 0.4s;
   padding: 16px;
 }

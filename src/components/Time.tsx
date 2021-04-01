@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import TimeStyle from './Time.module.css';
 
 const Home = () => {
 
@@ -14,7 +15,7 @@ const Home = () => {
     }, [currentTime]);
 
     return (
-        <div>{currentTime}</div>
+        <div className={TimeStyle.time}>{currentTime}</div>
     )};
 
 export default Home;
