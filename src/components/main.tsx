@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import NavBar from './NavBar/NavBar';
 import Home from './Home';
+import Time from './Time';
 import { routes } from '../assets/routes';
 import { platforms } from '../assets/platforms';
-
 import PlatformsMenu from './NavBar/PlatformsMenu';
 
 const Main = () => {
@@ -25,6 +25,7 @@ const Main = () => {
 
   return (
     <Router>
+      <Time />
       <PlatformsMenu switchPlatform={switchPlatform} />
       <NavBar
         toggleMainWidth={toggleMainWidth}
