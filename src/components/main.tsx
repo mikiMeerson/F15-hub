@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-import NavBar from './NavBar/NavBar';
+import NavBar from './NavBar';
 import Home from './Home';
 import { routes } from '../assets/routes';
 import { platforms } from '../assets/platforms';
-
 import PlatformsMenu from './NavBar/PlatformsMenu';
+import MainStyle from './Main.module.css';
 
 const Main = () => {
   const [minimizeSideBar, setMinimizeSideBar] = useState(true);
@@ -15,7 +15,7 @@ const Main = () => {
 
   const toggleMainWidth = () => {
     setMinimizeSideBar(!minimizeSideBar);
-    setMainWidthClass(minimizeSideBar ? 'main-min' : 'main-max');
+    setMainWidthClass(minimizeSideBar ? MainStyle.mainMin : MainStyle.mainMax);
   };
 
   const switchPlatform = (platformID: string) => {
@@ -31,7 +31,7 @@ const Main = () => {
         mini={minimizeSideBar}
         platform={platform}
       />
-      <div className={`content ${mainWidthClass}`}>
+      <div className={`${MainStyle.content} ${mainWidthClass}`}>
         <Switch>
           <Route exact path="/" component={Home} />
           {routes.map((route) => (

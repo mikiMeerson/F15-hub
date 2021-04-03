@@ -1,33 +1,36 @@
-import './platforms.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { platforms } from '../../assets/platforms';
+import PlatformsStyle from './Platforms.module.css';
+import RoundButtonStyle from '../BasicComponents/RoundButton.module.css';
 
 interface PlatformsProps {
   switchPlatform: (newPlatform: string) => void;
 }
 
 const PlatformsMenu = ({ switchPlatform }: PlatformsProps) => (
-  <nav className="menu">
-    <input type="checkbox" className="menu-open" id="menu-open" />
-    <label className="menu-open-button" htmlFor="menu-open">
-      <span className="lines line-1" />
-      <span className="lines line-2" />
-      <span className="lines line-3" />
+  <nav className={PlatformsStyle.menu}>
+    <input type="checkbox" className={PlatformsStyle.menuOpen} id="menu-open" />
+    <label
+      className={`${RoundButtonStyle.roundButton} ${PlatformsStyle.menuOpenButton}`}
+      htmlFor="menu-open"
+    >
+      <span className={`${PlatformsStyle.lines} ${PlatformsStyle.line1}`} />
+      <span className={`${PlatformsStyle.lines} ${PlatformsStyle.line2}`} />
+      <span className={`${PlatformsStyle.lines} ${PlatformsStyle.line3}`} />
     </label>
-    {platforms.map((p) => (
-      <div
-        key={p.id}
-        className={`menu-item ${p.style}`}
-        role="button"
+    {platforms.map((platform) => (
+      <button
+        type="button"
+        key={platform.id}
+        className={`${PlatformsStyle.menuItem} ${platform.style} ${RoundButtonStyle.roundButton}`}
         tabIndex={0}
-        title={p.id}
-        onClick={() => switchPlatform(p.id)}
-        onKeyDown={() => switchPlatform(p.id)}
+        title={platform.id}
+        onClick={() => switchPlatform(platform.id)}
+        onKeyDown={() => switchPlatform(platform.id)}
       >
-        <FontAwesomeIcon icon={p.icon} />
-      </div>
+        <FontAwesomeIcon icon={platform.icon} />
+      </button>
     ))}
-    ;
   </nav>
 );
 

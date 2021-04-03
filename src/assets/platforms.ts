@@ -3,24 +3,25 @@ import {
   faRocket,
   faSpaceShuttle,
 } from '@fortawesome/free-solid-svg-icons';
+import PlatformsStyle from '../components/NavBar/Platforms.module.css';
 
 const platforms = [
   {
     id: 'home',
     header: 'AV-HUB',
-    style: 'home-style',
+    style: PlatformsStyle.home,
     icon: faHome,
   },
   {
     id: 'F15',
     header: 'F15-HUB',
-    style: 'f15-style',
+    style: PlatformsStyle.f15,
     icon: faRocket,
   },
   {
     id: 'F16',
     header: 'F16-HUB',
-    style: 'f16-style',
+    style: PlatformsStyle.f16,
     icon: faSpaceShuttle,
   },
 ];
